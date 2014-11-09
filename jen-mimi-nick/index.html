@@ -5,15 +5,36 @@
   <title>Ember Starter Kit</title>
 </head>
 <body>
-  <script type="text/x-handlebars">
+
+  <script type="text/x-handlebars" data-template-name="application">
+    <div class="navbar">
+      {{#link-to "index"}}Home{{/link-to}}
+      {{#link-to "about"}}About{{/link-to}}
+      {{#link-to "products"}}Produts{{/link-to}}
+    </div>
+    <div class="container">
+      {{outlet}}
+    </div>
+    <p>Page accessed on {{time}}</p>
+    <footer class="container"></footer>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="index">
     <h1>{{name}}</h1>
     <p>See if you can hold your breath for one minute!</p>
     <h2>{{timer}}</h2>
   </script>
 
+  <script type="text/x-handlebars" data-template-name="about">
+    <h1>About {{name}}</h1>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="products">
+    <h1>Products</h1>
+  </script>
   <script src="js/libs/jquery-1.10.2.js"></script>
-  <script src="js/libs/handlebars-1.1.2.js"></script>
-  <script src="js/libs/ember-1.7.0.js"></script>
+  <script src="js/libs/handlebars-v1.3.0.js"></script>
+  <script src="js/libs/ember-1.8.1.js"></script>
   <script src="js/app.js"></script>
   <!-- to activate the test runner, add the "?test" query string parameter -->
   <script src="tests/runner.js"></script>
